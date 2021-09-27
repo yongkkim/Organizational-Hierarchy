@@ -43,7 +43,7 @@ const PosNum = styled.div`
   justify-items: center;
 `;
 
-const Department = ({ subPosition, currentPos, expand }) => {
+const Position = ({ subPosition, currentPos, expand }) => {
   const findPath = (position) => {
     if (!position.lowerLevel) return false;
     if (position.level === "1") return true;
@@ -86,7 +86,7 @@ const Department = ({ subPosition, currentPos, expand }) => {
             </Dept>
           </div>
           {findPath(position) && (
-            <Department
+            <Position
               subPosition={position.lowerLevel}
               currentPos={currentPos}
               expand={expand}
@@ -98,4 +98,4 @@ const Department = ({ subPosition, currentPos, expand }) => {
   );
 };
 
-export default Department;
+export default Position;

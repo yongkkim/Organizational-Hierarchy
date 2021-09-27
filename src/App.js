@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer } from "react";
-import Department from "./components/Department";
+import Position from "./components/Position";
 import styled from "styled-components";
 import {
   hierarchy,
@@ -74,15 +74,19 @@ const App = () => {
 
   // In order to test "refreshing the hierarchy", swiching one hierarchy to another back and forth
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setPosHierarchy(
-        hierarchyName === "heavyHierarchy" ? leanHierarchy : heavyHierarchy
+        hierarchyName === "heavyHierarchy"
+          ? [...leanHierarchy]
+          : [...heavyHierarchy]
       );
+      setCurPos(currentPosition);
       setHierarchyName(
         hierarchyName === "heavyHierarchy" ? "leanHierarchy" : "heavyHierarchy"
       );
     }, 30 * 60 * 1000);
-  }, [hierarchyName]);
+    return () => clearInterval(interval);
+  }, [posHierarchy]);
 
   return (
     <>
@@ -102,7 +106,7 @@ const App = () => {
       </Indicator>
 
       <Tree className="tf-tree tf-custom">
-        <Department
+        <Position
           subPosition={posHierarchy}
           currentPos={currPos}
           expand={expandPosition}
