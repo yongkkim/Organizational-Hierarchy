@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import "./Department.css";
 
 const Dept = styled.section`
   padding: 0.5em 1em;
