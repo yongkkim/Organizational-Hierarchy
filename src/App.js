@@ -61,6 +61,11 @@ const Indicator = styled.div`
   }
 `;
 
+const Title = styled.h1`
+  text-align: center;
+  font-size: 40px;
+`;
+
 const App = () => {
   const [posHierarchy, setPosHierarchy] = useState(heavyHierarchy);
   const [currPos, setCurPos] = useState(currentPosition);
@@ -90,6 +95,7 @@ const App = () => {
 
   return (
     <>
+      <Title>Hierarchical Position Chart of Sales Department</Title>
       <Indicator>
         <ColorContainer>
           <Color></Color>
