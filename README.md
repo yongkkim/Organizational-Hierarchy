@@ -38,7 +38,7 @@ I would like to also explain about other details
 - I added hover effect on each position based on its status.
 - Number at the bottom of a position indicates a number of positions that each position is responsible for
 
-#Implementation
+### Implementation
 
 - I created JSON as heavy and lean management based on sample hierarchy with additional data.
 - I created a reusable component called, Position.
@@ -48,6 +48,6 @@ I would like to also explain about other details
   - Switch heavy management to lean management back and forth using useState
 - In order to check UI compatible with a large TV screen, I deployed to github page and opened the website with my TV (~58inches)
 
-###Links
+### Links
 
 [Check Hierarchy](https://yongkkim.github.io/Organizational-Hierarchy/)
