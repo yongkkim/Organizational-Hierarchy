@@ -16,6 +16,8 @@ Compared to displaying only branches from top position to the current position, 
 
 After I finished reading instructions and problem description, one of UI structures that I first focused on was to handle heavy and lean managements which were explained at the end of the instructions. I thought it was the most important part of implementation because as managers, leads, or sales reps are increasing, a size of the hierarchy would be also increasing and it will eventually become too large and hard to read it.
 
+I used InVision Studio to draw images of designs below
+
 ![image](https://user-images.githubusercontent.com/32205551/134948240-ce869142-b012-4ca3-9023-edb59e93be66.png)
 
 Those three figures of the image above explains how my idea gets to the final design. In order to manage a size of the chart, I choose to expand only targetted position but the other nodes can expand whenever user clicks any one of the collasped nodes
