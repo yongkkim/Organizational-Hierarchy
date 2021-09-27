@@ -24,7 +24,7 @@ Through the visualizing process, an initial structure of hierarchy is changed fr
 
 ![image](https://user-images.githubusercontent.com/32205551/134948421-389536a9-ea86-4dfc-a62b-7bb0bd7fbdb1.png)
 
-to
+---
 
 ![image](https://user-images.githubusercontent.com/32205551/134948486-e9a7adbe-e986-4e80-9921-750991c2b44c.png)
 
