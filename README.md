@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application with React framework that shows a chart of hierarchical positions. I used Treeflex library that helps user a simple hierarchical tree with basic styles. I also used Styled-components UI library to override default styles from Treeflex and also create a design of a position node.
 
-## Available Scripts
+I would like to explain the pattern.
 
-In the project directory, you can run:
+- I have chosen random position and the hierarchy will be initially displayed with all the branches to reach to the position.
+- Upper positions by one from current position will be displayed as a collapsed node
+- But it can expand by clicking a position.
 
-### `yarn start`
+Compared to displaying only branches from top position to the current position, it is convenient to check other positions that are at the same position as the selected position is.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Visualization
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Structure of a hierarachy
 
-### `yarn test`
+After I finished reading instructions and problem description, one of UI structures that I first focused on was to handle heavy and lean managements which were explained at the end of the instructions. I thought it was the most important part of implementation because as managers, leads, or sales reps are increasing, a size of the hierarchy would be also increasing and it will eventually become too large and hard to read it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+image
 
-### `yarn build`
+Those three figures of the image above explains how my idea gets to the final design. In order to manage a size of the chart, I choose to expand only targetted position but the other nodes can expand whenever user clicks any one of the collasped nodes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Through the visualizing process, an initial structure of hierarchy is changed from showing everything at once to showing specific branches to the targetted node.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+image
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+image
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Styling the hierarchy
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I tried to use different colors except white and black for each element that forms the hierarchy for user to quickly catch the structure. I planned to use 3-5 different colors and since 3 colors have already chosen, I additionally use one another color, 5 in total, to style the whole.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I would like to also explain about other details
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- I created color indicators at the top of the page so that user can quickly catch what each color stands for.
+- I added hover effect on each position based on its status.
+- Number at the bottom of a position indicates a number of positions that each position is responsible for
 
-## Learn More
+#Implementation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- I created JSON as heavy and lean management based on sample hierarchy with additional data.
+- I created a reusable component called, Position.
+- I recursively created a hierarchy within Position : if a position has sub positions that it is in charge of, then make another sub positions within Position
+- In order to testing refreshing the hierarchy, I made a similar situation
+  - Set initial management with heavy management
+  - Switch heavy management to lean management back and forth using useState
+- In order to check UI compatible with a large TV screen, I deployed to github page and opened the website with my TV (~58inches)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###Links
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Check Hierarchy](https://yongkkim.github.io/Organizational-Hierarchy/)
