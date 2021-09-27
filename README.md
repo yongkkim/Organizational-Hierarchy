@@ -30,7 +30,7 @@ Through the visualizing process, an initial structure of hierarchy is changed fr
 
 Lastly, according to my research on those kinds of charts, if too much responsive Web Deisgn is used in a hierarchy, it makes really difficult for user to read and trace a hierarchical order. It is obvious that Responsive Web Design is always good to use and should be used nowadays. In my opinion, in this case, I think it is good to keep the original structure that has been commonly used.
 
-In this assignment, there is a horizontal scroll when the hierarchy gets too large but when you actually read and trace it, it wouldn't be too hard to do them as long as the structure is kept the same and familiar
+In this assignment, there is a horizontal scroll when the hierarchy gets too large but when you actually read and trace it, it wouldn't be too hard to do them even with the scroll as long as the structure is kept the same and familiar
 
 ---
 
