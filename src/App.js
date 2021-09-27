@@ -64,22 +64,25 @@ const Indicator = styled.div`
 const App = () => {
   const [posHierarchy, setPosHierarchy] = useState(leanHierarchy);
   const [currPos, setCurPos] = useState(currentPosition);
-  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  //For testing if refreshing the hierarchy works
+  const [hierarchyName, setHierarchyName] = useState("leanHierarchy");
 
   const expandPosition = (position) => {
     setCurPos(position);
   };
 
-  // useEffect(() => {
-  //   setPosHierarchy(hierarchy);
-  // }, [currPos]);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setSeconds(seconds => seconds + 1);
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // },[])
+  //In order to test "refreshing the hierarchy", swiching one hierarchy to another back and forth
+  useEffect(() => {
+    setInterval(() => {
+      setPosHierarchy(
+        hierarchyName === "hierarchy" ? leanHierarchy : hierarchy
+      );
+      setHierarchyName(
+        hierarchyName === "hierarchy" ? "leanHierarchy" : "hierarchy"
+      );
+    }, 30 * 60 * 1000);
+  }, [hierarchyName]);
 
   return (
     <>
