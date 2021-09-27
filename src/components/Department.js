@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { currentPosition } from "../hierarchy";
 import "./Department.css";
 
 const Dept = styled.section`
@@ -14,16 +13,6 @@ const Dept = styled.section`
         ? "yellow"
         : "green"};
   cursor: pointer;
-  ${(p) =>
-    p.currPos &&
-    !p.expandPos &&
-    `background-color: ${
-      p.status === "critical"
-        ? "#ffdede"
-        : p.status === "warning"
-        ? "#ffffe5"
-        : "#e4ffe4"
-    };`};
 
   &:hover {
     background-color: ${(p) =>
@@ -51,9 +40,6 @@ const PosNum = styled.div`
 `;
 
 const Department = ({ subPosition, currentPos, expand }) => {
-  //   console.log(currentPos);
-  const [expandPos, setExpandPos] = useState(false);
-
   const findPath = (position) => {
     if (!position.lowerLevel) return false;
     if (position.level === "1") return true;
@@ -63,8 +49,6 @@ const Department = ({ subPosition, currentPos, expand }) => {
     const isSameManager = managerArr.every(
       (manager, i) => manager === currentPos.managers[i]
     );
-
-    console.log(managerArr, currentPos.managers);
 
     if (Number(position.level) + 1 < Number(currentPos.level)) return true;
     else if (

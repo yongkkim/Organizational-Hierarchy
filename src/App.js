@@ -73,16 +73,16 @@ const App = () => {
   };
 
   //In order to test "refreshing the hierarchy", swiching one hierarchy to another back and forth
-  useEffect(() => {
-    setInterval(() => {
-      setPosHierarchy(
-        hierarchyName === "hierarchy" ? leanHierarchy : hierarchy
-      );
-      setHierarchyName(
-        hierarchyName === "hierarchy" ? "leanHierarchy" : "hierarchy"
-      );
-    }, 30 * 60 * 1000);
-  }, [hierarchyName]);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setPosHierarchy(
+  //       hierarchyName === "hierarchy" ? leanHierarchy : hierarchy
+  //     );
+  //     setHierarchyName(
+  //       hierarchyName === "hierarchy" ? "leanHierarchy" : "hierarchy"
+  //     );
+  //   }, 30 * 60 * 1000);
+  // }, [hierarchyName]);
 
   return (
     <>
@@ -106,7 +106,6 @@ const App = () => {
           subPosition={posHierarchy}
           currentPos={currPos}
           expand={expandPosition}
-          expandPosition={false}
         />
       </Tree>
     </>
