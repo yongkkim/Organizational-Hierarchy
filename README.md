@@ -49,6 +49,8 @@ I would like to also explain about other details
   - Set initial management with heavy management
   - Switch heavy management to lean management back and forth using useState
 - In order to check UI compatible with a large TV screen, I deployed to github page and opened the website with my TV (~58inches)
+  ![IMG_9982](https://user-images.githubusercontent.com/32205551/134952831-33333f4a-52be-411f-874d-0201df26001a.jpg)
+
 
 ### Links
 
