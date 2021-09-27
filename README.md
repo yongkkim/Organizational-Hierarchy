@@ -52,6 +52,6 @@ I would like to also explain about other details
   ![IMG_9982](https://user-images.githubusercontent.com/32205551/134952831-33333f4a-52be-411f-874d-0201df26001a.jpg)
 
 
-### Links
+### Link
 
 [Check Hierarchy](https://yongkkim.github.io/Organizational-Hierarchy/)
