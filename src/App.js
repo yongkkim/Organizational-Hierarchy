@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import Department from "./components/Department";
 import styled from "styled-components";
-import { hierarchy } from "./hierarchy";
+import {
+  hierarchy,
+  heavyHierarchy,
+  leanHierarchy,
+  currentPosition,
+} from "./hierarchy";
 import "./App.css";
 
 const Tree = styled.div`
+  text-align: center;
   margin-top: 100px;
   & .tf-nc {
     border: none;
@@ -56,6 +62,25 @@ const Indicator = styled.div`
 `;
 
 const App = () => {
+  const [posHierarchy, setPosHierarchy] = useState(leanHierarchy);
+  const [currPos, setCurPos] = useState(currentPosition);
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  const expandPosition = (position) => {
+    setCurPos(position);
+  };
+
+  // useEffect(() => {
+  //   setPosHierarchy(hierarchy);
+  // }, [currPos]);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setSeconds(seconds => seconds + 1);
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // },[])
+
   return (
     <>
       <Indicator>
@@ -72,8 +97,14 @@ const App = () => {
           <span>Normal</span>
         </ColorContainer>
       </Indicator>
+
       <Tree className="tf-tree tf-custom">
-        <Department subPosition={hierarchy} location={""} />
+        <Department
+          subPosition={posHierarchy}
+          currentPos={currPos}
+          expand={expandPosition}
+          expandPosition={false}
+        />
       </Tree>
     </>
   );
