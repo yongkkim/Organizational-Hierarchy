@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Organizational-Hierarchy/static/css/main.4221c4c3.chunk.css",
+    "main.js": "/Organizational-Hierarchy/static/js/main.b6fcf9b7.chunk.js",
+    "main.js.map": "/Organizational-Hierarchy/static/js/main.b6fcf9b7.chunk.js.map",
+    "runtime-main.js": "/Organizational-Hierarchy/static/js/runtime-main.a940cfc5.js",
+    "runtime-main.js.map": "/Organizational-Hierarchy/static/js/runtime-main.a940cfc5.js.map",
+    "static/js/2.fb0961a6.chunk.js": "/Organizational-Hierarchy/static/js/2.fb0961a6.chunk.js",
+    "static/js/2.fb0961a6.chunk.js.map": "/Organizational-Hierarchy/static/js/2.fb0961a6.chunk.js.map",
+    "static/js/3.b69b5b54.chunk.js": "/Organizational-Hierarchy/static/js/3.b69b5b54.chunk.js",
+    "static/js/3.b69b5b54.chunk.js.map": "/Organizational-Hierarchy/static/js/3.b69b5b54.chunk.js.map",
+    "index.html": "/Organizational-Hierarchy/index.html",
+    "static/css/main.4221c4c3.chunk.css.map": "/Organizational-Hierarchy/static/css/main.4221c4c3.chunk.css.map",
+    "static/js/2.fb0961a6.chunk.js.LICENSE.txt": "/Organizational-Hierarchy/static/js/2.fb0961a6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a940cfc5.js",
+    "static/js/2.fb0961a6.chunk.js",
+    "static/css/main.4221c4c3.chunk.css",
+    "static/js/main.b6fcf9b7.chunk.js"
+  ]
+}
