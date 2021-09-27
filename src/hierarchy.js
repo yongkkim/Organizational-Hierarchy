@@ -1,29 +1,37 @@
 export const hierarchy = [
   {
+    id: "1VP",
     level: "1",
     title: "VP of Sales",
     status: "critical",
+    inCharge: ["North America", "Europe"],
     lowerLevel: [
       {
-        level: "2.1",
+        id: "2NA",
+        level: "2",
         title: "Sales Manager",
         region: "North America",
+        inCharge: ["Canada", "USA"],
         status: "critical",
         lowerLevel: [
           {
-            level: "2.1.1",
+            id: "3CA",
+            level: "3",
             title: "Sales Lead",
             region: "Canada",
+            inCharge: ["Toronto", "Vancouver"],
             status: "normal",
             lowerLevel: [
               {
-                level: "2.1.1.1",
+                id: "4CATornto",
+                level: "4",
                 title: "Sales Rep",
                 region: "Toronto",
                 status: "normal",
               },
               {
-                level: "2.1.1.2",
+                id: "4CAVancouver",
+                level: "4",
                 title: "Sales Rep",
                 region: "Vancouver",
                 status: "normal",
@@ -31,25 +39,30 @@ export const hierarchy = [
             ],
           },
           {
-            level: "2.1.2",
+            id: "3US",
+            level: "3",
             title: "Sales Lead",
             region: "USA",
+            inCharge: ["New York", "Dallas", "Los Angeles"],
             status: "critical",
             lowerLevel: [
               {
-                level: "2.1.2.1",
+                id: "4USNewYork",
+                level: "4",
                 title: "Sales Rep",
                 region: "New York",
                 status: "warning",
               },
               {
-                level: "2.1.2.2",
+                id: "4USDallas",
+                level: "4",
                 title: "Sales Rep",
                 region: "Dallas",
                 status: "critical",
               },
               {
-                level: "2.1.2.3",
+                id: "4USLosAngeles",
+                level: "4",
                 title: "Sales Rep",
                 region: "Los Angeles",
                 status: "critical",
@@ -59,25 +72,31 @@ export const hierarchy = [
         ],
       },
       {
-        level: "2.2",
+        id: "2EUR",
+        level: "2",
         title: "Sales Manager",
         region: "Europe",
+        inCharge: ["Germany", "Italy"],
         status: "warning",
         lowerLevel: [
           {
-            level: "2.2.1",
+            id: "3GER",
+            level: "3",
             title: "Sales Lead",
             region: "Germany",
+            inCharge: ["Berlin", "Frankfurt"],
             status: "warning",
             lowerLevel: [
               {
-                level: "2.2.1.1",
+                id: "4GERBerlin",
+                level: "4",
                 title: "Sales Rep",
                 region: "Berlin",
                 status: "normal",
               },
               {
-                level: "2.2.1.2",
+                id: "4GERFrankfurt",
+                level: "4",
                 title: "Sales Rep",
                 region: "Frankfurt",
                 status: "critical",
@@ -85,13 +104,16 @@ export const hierarchy = [
             ],
           },
           {
-            level: "2.2.2",
+            id: "3IT",
+            level: "3",
             title: "Sales Lead",
-            region: "USA",
-            status: "critical",
+            region: "Italy",
+            inCharge: ["Milan"],
+            status: "normal",
             lowerLevel: [
               {
-                level: "2.2.2.1",
+                id: "4ITMilan",
+                level: "4",
                 title: "Sales Rep",
                 region: "Milan",
                 status: "normal",

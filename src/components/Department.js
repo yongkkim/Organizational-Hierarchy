@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "./Department.css";
 
@@ -12,21 +12,57 @@ const Dept = styled.section`
         : p.status === "warning"
         ? "yellow"
         : "green"};
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${(p) =>
+      p.status === "critical"
+        ? "#ffdede"
+        : p.status === "warning"
+        ? "#ffffe5"
+        : "#e4ffe4"};
+  }
+
+  ${(p) =>
+    p.location &&
+    `background-color: ${
+      p.status === "critical"
+        ? "#ff9b9b"
+        : p.status === "warning"
+        ? "#ffffaa"
+        : "#a9ffa9"
+    }`};
 `;
 
-const Department = ({ subDepartment }) => {
+const Department = ({ subPosition, location }) => {
+  //   console.log(subDepartment[0].region);
+
+  const [loc, setLoc] = useState("");
+  const findDirectDept = () => {
+    // if(subDepartment.level > 1){
+    //     const searchLoc = subDepartment.inCharge.find(loc => loc === currentLoc)
+    //     if(searchLoc) setLocation(subDepartment.region);
+    // }else{
+    // }
+  };
+
   return (
     <ul>
-      {subDepartment.map((department) => (
-        <li key={department.level}>
+      {subPosition.map((position) => (
+        <li key={position.id}>
+          {console.log(position.status, position.region)}
           <div className="tf-nc">
-            <Dept status={department.status}>
-              <h3>{department.title}</h3>
-              <p>{department.region}</p>
+            <Dept
+              status={position.status}
+              location={location}
+              onClick={() => findDirectDept()}
+            >
+              <h3>{position.title}</h3>
+              <p>{position.region}</p>
             </Dept>
           </div>
-          {department.lowerLevel && (
-            <Department subDepartment={department.lowerLevel} />
+          {position.lowerLevel && (
+            <Department subPosition={position.lowerLevel} location={loc} />
           )}
         </li>
       ))}
