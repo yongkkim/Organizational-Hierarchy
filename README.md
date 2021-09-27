@@ -28,6 +28,10 @@ Through the visualizing process, an initial structure of hierarchy is changed fr
 
 ![image](https://user-images.githubusercontent.com/32205551/134948486-e9a7adbe-e986-4e80-9921-750991c2b44c.png)
 
+Lastly, according to my research on those kinds of charts, if too much responsive Web Deisgn is used in a hierarchy, it makes really difficult for user to read and trace a hierarchical order. It is obvious that Responsive Web Design is always good to use and should be used nowadays. In my opinion, in this case, I think it is good to keep the original structure that has been commonly used.
+
+In this assignment, there is a horizontal scroll when the hierarchy gets too large but when you actually read and trace it, it wouldn't be too hard to do them as long as the structure is kept the same and familiar
+
 ---
 
 ### Styling the hierarchy
@@ -50,7 +54,6 @@ I would like to also explain about other details
   - Switch heavy management to lean management back and forth using useState
 - In order to check UI compatible with a large TV screen, I deployed to github page and opened the website with my TV (~58inches)
   ![IMG_9982](https://user-images.githubusercontent.com/32205551/134952831-33333f4a-52be-411f-874d-0201df26001a.jpg)
-
 
 ### Link
 
