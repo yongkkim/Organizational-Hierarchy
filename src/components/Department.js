@@ -25,6 +25,7 @@ const Dept = styled.section`
 `;
 
 const PosNum = styled.div`
+  display: flex;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -37,6 +38,9 @@ const PosNum = styled.div`
   right: 0;
   bottom: -17px;
   margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 `;
 
 const Department = ({ subPosition, currentPos, expand }) => {
@@ -75,7 +79,9 @@ const Department = ({ subPosition, currentPos, expand }) => {
               <h3>{position.title}</h3>
               <p>{position.region}</p>
               {position.lowerLevel && !findPath(position) && (
-                <PosNum>{position.lowerLevel.length}</PosNum>
+                <PosNum>
+                  <span>{position.lowerLevel.length}</span>
+                </PosNum>
               )}
             </Dept>
           </div>

@@ -62,27 +62,27 @@ const Indicator = styled.div`
 `;
 
 const App = () => {
-  const [posHierarchy, setPosHierarchy] = useState(leanHierarchy);
+  const [posHierarchy, setPosHierarchy] = useState(heavyHierarchy);
   const [currPos, setCurPos] = useState(currentPosition);
 
   //For testing if refreshing the hierarchy works
-  const [hierarchyName, setHierarchyName] = useState("leanHierarchy");
+  const [hierarchyName, setHierarchyName] = useState("heavyHierarchy");
 
   const expandPosition = (position) => {
     setCurPos(position);
   };
 
-  //In order to test "refreshing the hierarchy", swiching one hierarchy to another back and forth
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setPosHierarchy(
-  //       hierarchyName === "hierarchy" ? leanHierarchy : hierarchy
-  //     );
-  //     setHierarchyName(
-  //       hierarchyName === "hierarchy" ? "leanHierarchy" : "hierarchy"
-  //     );
-  //   }, 30 * 60 * 1000);
-  // }, [hierarchyName]);
+  // In order to test "refreshing the hierarchy", swiching one hierarchy to another back and forth
+  useEffect(() => {
+    setInterval(() => {
+      setPosHierarchy(
+        hierarchyName === "heavyHierarchy" ? leanHierarchy : heavyHierarchy
+      );
+      setHierarchyName(
+        hierarchyName === "heavyHierarchy" ? "leanHierarchy" : "heavyHierarchy"
+      );
+    }, 30 * 60 * 1000);
+  }, [hierarchyName]);
 
   return (
     <>
