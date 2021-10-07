@@ -68,13 +68,15 @@ const Title = styled.h1`
 
 const App = () => {
   const [posHierarchy, setPosHierarchy] = useState(heavyHierarchy);
-  const [currPos, setCurPos] = useState(currentPosition);
+  const [currPos, setCurrPos] = useState(currentPosition);
+  const [isExpand, setIsExpand] = useState(false);
 
   //For testing if refreshing the hierarchy works
   const [hierarchyName, setHierarchyName] = useState("heavyHierarchy");
 
   const expandPosition = (position) => {
-    setCurPos(position);
+    setIsExpand(true);
+    setCurrPos(position);
   };
 
   // In order to test "refreshing the hierarchy", swiching one hierarchy to another back and forth
@@ -85,7 +87,7 @@ const App = () => {
           ? [...leanHierarchy]
           : [...heavyHierarchy]
       );
-      setCurPos(currentPosition);
+      setCurrPos(currentPosition);
       setHierarchyName(
         hierarchyName === "heavyHierarchy" ? "leanHierarchy" : "heavyHierarchy"
       );
@@ -116,6 +118,7 @@ const App = () => {
           subPosition={posHierarchy}
           currentPos={currPos}
           expand={expandPosition}
+          isExpand={isExpand}
         />
       </Tree>
     </>
